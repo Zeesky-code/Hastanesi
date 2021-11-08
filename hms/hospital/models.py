@@ -13,8 +13,9 @@ departments=[('Cardiology','Cardiology'),
 class Doctor(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     address = models.CharField(max_length=40)
-    mobile = models.CharField(max_length=20,null=True)
+    telephone = models.CharField(max_length=20,null=True)
     department= models.CharField(max_length=40,choices=departments,default='Cardiology')
+    profile_pic= models.ImageField(upload_to='profile_pic/PatientProfilePic/',null=True,blank=True)
     status=models.BooleanField(default=False)
     @property
     def get_name(self):
