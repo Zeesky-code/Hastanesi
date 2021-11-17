@@ -15,8 +15,7 @@ class Doctor(models.Model):
     address = models.CharField(max_length=40)
     telephone = models.CharField(max_length=20,null=True)
     department= models.CharField(max_length=40,choices=departments,default='Cardiology')
-    profile_pic= models.ImageField(upload_to='profile_pic/DoctorProfilePic/',null=True,blank=True)
-    active=models.BooleanField(default=False)
+    on_call=models.BooleanField(default=False)
     @property
     def get_name(self):
         return self.user.first_name+" "+self.user.last_name
