@@ -5,4 +5,5 @@ from hospital import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_view, name=''),
+    path('patient',views.patient_view),
 ]

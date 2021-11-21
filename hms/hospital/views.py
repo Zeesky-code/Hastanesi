@@ -4,3 +4,5 @@ from django.shortcuts import render
 def home_view(request):
     return render(request, 'hospital/index.html')
 
+def patient_view(request):
+    return render(request,'hospital/patient.html')

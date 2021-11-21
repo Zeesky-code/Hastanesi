@@ -1,16 +1,7 @@
-<!DOCTYPE html>
+{% extends 'hospital/base.html' %}
 {% load static %}
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Hastanesi</title>
-        <link rel="stylesheet" href="{% static '/styles.css' %}">
-    </head>
-    <body>
-        {% include "hospital/navbar.html" %}
-        <br>
-        <br>
-        <br>
-        <h1>This seems interesting</h1>
-    </body>
-</html>
+{% block content %}
+        <div id= "mid">
+            <h1 id="centre">Let's see how long it'll take</h1>
+        </div>
+{% endblock content %}
