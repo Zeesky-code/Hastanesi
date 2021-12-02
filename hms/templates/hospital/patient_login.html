@@ -57,33 +57,27 @@
     <div class ="container register-form">
         <div class="form">
             <div class="note">
-                <p>Sign up as a Patient</p>
+                <p>Login as a Patient</p>
             </div>
             <div class="form-content">
                 <div class="row">
                     <div class="col-md-6">
                         <br>
                         <div class="form-group">
-                        {% render_field userForm.first_name class="form-control" placeholder="First Name" %}
+                        {% render_field patientForm.first_name class="form-control" placeholder="First Name" %}
                         </div>
                         <div class="form-group">
-                            {% render_field userForm.username class="form-control" placeholder="Username" %}
-                        </div>
-                        <div class="form-group">
-                            {% render_field patientForm.address class="form-control" placeholder="Address" %}
+                            {% render_field patientForm.username class="form-control" placeholder="Username" %}
                         </div>
                     </div>
             
                     <div class="col-md-6">
                         <br>
                         <div class="form-group">
-                            {% render_field userForm.last_name class="form-control" placeholder="Last Name" %}
+                            {% render_field patientForm.last_name class="form-control" placeholder="Last Name" %}
                         </div>
                         <div class="form-group">
-                            {% render_field userForm.password class="form-control" placeholder="Password" %}
-                        </div>
-                        <div class="form-group">
-                            {% render_field patientForm.symptoms class="form-control" placeholder="Symptoms" %}
+                            {% render_field patientForm.password class="form-control" placeholder="Password" %}
                         </div>
                     </div>
                 </div>

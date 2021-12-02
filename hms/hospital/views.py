@@ -10,7 +10,7 @@ def patient_view(request):
     return render(request,'hospital/patient.html')
 
 def patient_signup(request):
-    userForm=forms.PatientForm()
+    userForm=forms.PatientUserForm()
     patientForm=forms.PatientForm()
     mydict={'userForm':userForm,'patientForm':patientForm}
     if request.method=='POST':
@@ -20,5 +20,10 @@ def patient_signup(request):
             user=userForm.save()
             user.set_password(user.password)
             user.save()
+            patient=patientForm.save(commit=False)
+            patient.user=user
+            patient.patient.save()
+            my_patient_group = Group.objects.get_or_create(name='PATIENT')
+            my_patient_group[0].user_set.add(user)
         return HttpResponseRedirect('patientlogin')
     return render(request,'hospital/patient_signup.html',context=mydict)
